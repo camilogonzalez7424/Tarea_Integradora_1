@@ -1,4 +1,4 @@
-![](https://imgur.com/a/m51kskl.jpg)
+![](https://i.imgur.com/YyekAXw.jpg)
 # Proyecto Integrador 1
 ## APO I
 
