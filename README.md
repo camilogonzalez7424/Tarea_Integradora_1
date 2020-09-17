@@ -1,5 +1,5 @@
-![](https://i.imgur.com/YyekAXw.jpg)
-# Proyecto Integrador 1
+![](https://i.imgur.com/qzfzS2Q.jpg)
+# Tarea Integradora 1
 ## APO I
 
 ### Descripción: 
