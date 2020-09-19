@@ -45,6 +45,7 @@ public class integradora1{
 			System.out.println("El valor total de los productos en la ferreteria del barrio es de "+totalFinalB(materials,neighborhood,amount,blackCheck,whiteCheck,paintingCheck));
 			
 			delevery(names,materials,amount,valuesHomecenter,valuesHardwarestore,valuesNeighborhood);
+			list(materials,names,typeuse);
 		}
 	
 	 /** 
@@ -308,5 +309,38 @@ public class integradora1{
 				}
 		
 		
+	}
+	
+	public static void list(int materials,String[] names,int[] typeuse){
+		int i = 0;
+		use[] lista = new use[materials];
+		while(i<materials){
+			if(typeuse[i]==1){
+				lista[i] = use.BLACK;
+			}else if(typeuse[i]==2){
+				lista[i] = use.WHITE;
+			}else if(typeuse[i]==3){
+				lista[i] = use.PAINTING;
+			}
+				i++;		
+		}
+		for(int j = 0; j<materials;j++){
+			if(lista[j] == use.BLACK){
+				System.out.println("Los materiales de obra Negra son; ");
+				System.out.println(names[j]);
+			}
+		}
+	for(int j = 0; j<materials;j++){
+			if(lista[j] == use.WHITE){
+				System.out.println("Los materiales de obra Blanca son; ");
+				System.out.println(names[j]);
+			}
+		}
+		for(int j = 0; j<materials;j++){
+			if(lista[j] == use.PAINTING){
+				System.out.println("Los materiales de Pintura son; ");
+				System.out.println(names[j]);
+			}
+		}
 	}
 }
