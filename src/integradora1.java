@@ -34,9 +34,9 @@ public class integradora1{
 				reader.nextLine();
 		    }
 			
-			valuesH(names,homeCenter,materials);
-			valuesC(names,hardwarestore,materials);
-			valuesB(names,neighborhood,materials);
+			double[] valuesHomecenter=valuesH(names,homeCenter,materials);
+			double[] valuesHardwarestore=valuesC(names,hardwarestore,materials);
+			double[] valuesNeighborhood=valuesB(names,neighborhood,materials);
 			boolean blackCheck = fin1(typeuse,materials);
 			boolean whiteCheck = fin2(typeuse,materials);
 			boolean paintingCheck = fin3(typeuse,materials);
@@ -44,6 +44,7 @@ public class integradora1{
 			System.out.println("El valor total de los productos en la ferreteria del centro es de "+totalFinalC(materials,hardwarestore,amount,blackCheck,whiteCheck,paintingCheck));
 			System.out.println("El valor total de los productos en la ferreteria del barrio es de "+totalFinalB(materials,neighborhood,amount,blackCheck,whiteCheck,paintingCheck));
 			
+			delevery(names,materials,amount,valuesHomecenter,valuesHardwarestore,valuesNeighborhood);
 		}
 	
 	 /** 
@@ -188,6 +189,8 @@ public class integradora1{
 				break;
 			case 3:
 				break;
+			default:
+	
 		}
 		}
 		return x;
@@ -205,6 +208,8 @@ public class integradora1{
 				break;
 			case 3:
 				break;
+			default:
+	
 		}
 		}
 		return y;
@@ -222,9 +227,86 @@ public class integradora1{
 			case 3:
 				z = true;
 				break;
+			default:
 		}
 			
 		}
 		return z;
+	}
+	
+	public static void delevery(String[] names,int materials,double[] amount,double[] valuesHomecenter,double[] valuesHardwarestore,double[] valuesNeighborhood){
+		double[] bestprice1 = new double[materials];
+		double totalbest = 0;
+		for(int i = 0; i<materials;i++){
+			if(valuesHomecenter[i]<valuesHardwarestore[i]){
+				bestprice1[i] = valuesHomecenter[i];
+				System.out.println("El mejor lugar para comprar "+names[i]+" es "+"HomeCenter "+"con un precio de: "+bestprice1[i]);
+			}else if(valuesHomecenter[i]>valuesHardwarestore[i]){
+				bestprice1[i] = valuesHardwarestore[i];
+				System.out.println("El mejor lugar para comprar "+names[i]+" es "+"la ferreteria del centro "+"con un precio de. "+bestprice1[i]);
+			}
+		}
+		for(int i = 0; i<materials;i++){
+			if(bestprice1[i]<valuesNeighborhood[i]){
+				bestprice1[i] = bestprice1[i];
+			}else if(bestprice1[i]>valuesNeighborhood[i]){
+				bestprice1[i] = valuesNeighborhood[i];
+				System.out.println("El mejor lugar para comprar "+names[i]+" es "+"la ferreteria del barrio "+"con un precio de "+bestprice1[i]);
+			}
+		}
+		
+		for(int i = 0; i<materials;i++){
+			totalbest+= amount[i]*bestprice1[i];
+		}
+		System.out.println("El valor total de los materiales sin envios es: "+totalbest);
+		
+		System.out.println("Ingrese su ubicación\n 1: North \n 2: Center \n 3: South");
+		int user = reader.nextInt();
+		location place = null;
+        switch (user) {
+            case 1:
+                place = location.NORTH;
+                break;
+            case 2:
+                place = location.CENTER;
+                break;
+            case 3:
+                place = location.SOUTH;
+                break;
+				default:
+        }
+		switch(place){
+			case NORTH:
+				if(totalbest<80000){
+					System.out.println("El valor total de los materiales con envios es: "+(totalbest+120000));
+				}else if(totalbest<300000){
+					System.out.println("El valor total de los materiales con envios es: "+(totalbest+28000));
+				}else if(totalbest>=300000){
+					System.out.println("El valor total de los materiales con envios es: "+totalbest);
+				}
+				break;
+			case CENTER:
+				if(totalbest<80000){
+					System.out.println("El valor total de los materiales con envios es: "+(totalbest+50000));
+				}else if(totalbest<300000){
+					System.out.println("El valor total de los materiales con envios es: "+totalbest);
+				}else if(totalbest>=300000){
+					System.out.println("El valor total de los materiales con envios es: "+totalbest);
+				}
+				break;
+			case SOUTH:
+				if(totalbest<80000){
+					System.out.println("El valor total de los materiales con envios es: "+(totalbest+120000));
+				}else if(totalbest<300000){
+					System.out.println("El valor total de los materiales con envios es: "+(totalbest+50000));
+				}else if(totalbest>=300000){
+					System.out.println("El valor total de los materiales con envios es: "+totalbest);
+				}
+				break;
+					default:
+	
+				}
+		
+		
 	}
 }
