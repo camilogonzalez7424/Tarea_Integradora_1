@@ -44,14 +44,14 @@ public class integradora1 {
         System.out.println("El valor total de los productos en la ferreteria del centro es de " + totalFinalC(materials, hardwarestore, amount, blackCheck, whiteCheck, paintingCheck));
         System.out.println("El valor total de los productos en la ferreteria del barrio es de " + totalFinalB(materials, neighborhood, amount, blackCheck, whiteCheck, paintingCheck));
 
-        delevery(names, materials, amount, valuesHomecenter, valuesHardwarestore, valuesNeighborhood,blackCheck,whiteCheck,paintingCheck);
+        delevery(names, materials, amount, valuesHomecenter, valuesHardwarestore, valuesNeighborhood, blackCheck, whiteCheck, paintingCheck);
         list(materials, names, typeuse);
     }
 
     /** 
      * Save the price of the materials in HomeCenter. <br>
      * <b> pre: </b> previus arrays got to be filled.
-	 * <b> pre: </b> Scanner as attribute.
+     * <b> pre: </b> Scanner as attribute.
      * @param names Type String[]. 
      * @param homeCenter Type Double[].
      * @param materials Type Int.
@@ -69,7 +69,7 @@ public class integradora1 {
     /** 
      * Save the price of the materials in central hardware store. <br>
      * <b> pre: </b> previus arrays got to be filled.
-	 * <b> pre: </b> Scanner as attribute.
+     * <b> pre: </b> Scanner as attribute.
      * @param names Type String[]. 
      * @param hardwarestore Type Double[].
      * @param materials Type Int.
@@ -85,7 +85,7 @@ public class integradora1 {
     /** 
      * Save the price of the materials in the hardware store of the neighborhood. <br>
      * <b> pre: </b> previus arrays got to be filled.
-	 * <b> pre: </b> Scanner as attribute.
+     * <b> pre: </b> Scanner as attribute.
      * @param names Type String[]. 
      * @param neighborhood Type Double[].
      * @param materials Type Int.
@@ -183,7 +183,7 @@ public class integradora1 {
         }
         return totalneighborhood;
     }
-	 /** 
+    /** 
      * Evaluate if there is a type of work. <br>
      * <b> pre: </b> previus arrays got to be filled.
      * @param typeuse Type Int[].
@@ -209,7 +209,7 @@ public class integradora1 {
         }
         return evaluateN;
     }
-	/** 
+    /** 
      * Evaluate if there is a type of work. <br>
      * <b> pre: </b> previus arrays got to be filled.
      * @param typeuse Type Int[].
@@ -235,7 +235,7 @@ public class integradora1 {
         }
         return evaluateW;
     }
-	/** 
+    /** 
      * Evaluate if there is a type of work. <br>
      * <b> pre: </b> previus arrays got to be filled.
      * @param typeuse Type Int[].
@@ -261,45 +261,42 @@ public class integradora1 {
         }
         return evaluateP;
     }
-	/** 
+    /** 
      * This method evaluates the best prices and delevery according to the position. <br>
      * <b> pre: </b> previus arrays got to be filled.
      * @param names Type String[].
      * @param materials Type Int.
-	 * @param amount Type Double[].
-	 * @param valuesHomecenter Type Double[].
-	 * @param valuesHardwarestore Type Double[].
-	 * @param valuesNeighborhood Type Double[].
-	 * @param blackCheck Type Boolean.
-	 * @param whiteCheck Type Boolean
-	 * @param paintingCheck Type Boolean.
+     * @param amount Type Double[].
+     * @param valuesHomecenter Type Double[].
+     * @param valuesHardwarestore Type Double[].
+     * @param valuesNeighborhood Type Double[].
+     * @param blackCheck Type Boolean.
+     * @param whiteCheck Type Boolean
+     * @param paintingCheck Type Boolean.
      */
-    public static void delevery(String[] names, int materials, double[] amount, double[] valuesHomecenter, double[] valuesHardwarestore, double[] valuesNeighborhood,boolean blackCheck, boolean whiteCheck, boolean paintingCheck){
+    public static void delevery(String[] names, int materials, double[] amount, double[] valuesHomecenter, double[] valuesHardwarestore, double[] valuesNeighborhood, boolean blackCheck, boolean whiteCheck, boolean paintingCheck) {
         int totalbest = 0;
-        for(int i=0;i<materials;i++){
-			System.out.print("El mejor precio del material "+names[i]+" esta en: ");
-			if(valuesHomecenter[i]<valuesNeighborhood[i]){
-				if(valuesHomecenter[i]<valuesHardwarestore[i]){
-				totalbest+=(valuesHomecenter[i]*amount[i]);
-				System.out.println("HomeCenter = "+ valuesHomecenter[i] +"\n");
-				}
-				else{
-					totalbest+=(valuesHardwarestore[i]*amount[i]);
-					System.out.println("la ferreteria del centro = "+ valuesHardwarestore[i] +"\n");
-				}
-			}
-			else{
-				if(valuesNeighborhood[i]<valuesHardwarestore[i]){
-					totalbest+=(valuesNeighborhood[i]*amount[i]);
-				System.out.println("la ferreteria del barrio = "+ valuesNeighborhood[i] +"\n");
-				}
-				else{
-					totalbest+=valuesHardwarestore[i]*amount[i];
-					System.out.println("la ferreteria del centro = "+valuesHardwarestore[i]+"\n");
-				}
-			}
-		}
-	
+        for (int i = 0; i < materials; i++) {
+            System.out.print("El mejor precio del material " + names[i] + " esta en: ");
+            if (valuesHomecenter[i] < valuesNeighborhood[i]) {
+                if (valuesHomecenter[i] < valuesHardwarestore[i]) {
+                    totalbest += (valuesHomecenter[i] * amount[i]);
+                    System.out.println("HomeCenter = " + valuesHomecenter[i] + "\n");
+                } else {
+                    totalbest += (valuesHardwarestore[i] * amount[i]);
+                    System.out.println("la ferreteria del centro = " + valuesHardwarestore[i] + "\n");
+                }
+            } else {
+                if (valuesNeighborhood[i] < valuesHardwarestore[i]) {
+                    totalbest += (valuesNeighborhood[i] * amount[i]);
+                    System.out.println("la ferreteria del barrio = " + valuesNeighborhood[i] + "\n");
+                } else {
+                    totalbest += valuesHardwarestore[i] * amount[i];
+                    System.out.println("la ferreteria del centro = " + valuesHardwarestore[i] + "\n");
+                }
+            }
+        }
+
         System.out.println("El valor total de los materiales sin envios es: " + totalbest);
 
         System.out.println("Ingrese su ubicación\n 1: North \n 2: Center \n 3: South");
@@ -348,8 +345,8 @@ public class integradora1 {
             default:
 
         }
-		
-		if (blackCheck == true) {
+
+        if (blackCheck == true) {
             totalbest = totalbest + ROUGHCONSTRUCTION;
         }
         if (whiteCheck == true) {
@@ -358,16 +355,16 @@ public class integradora1 {
         if (paintingCheck == true) {
             totalbest = totalbest + PAINTING;
         }
-		
-		System.out.println("El valor total con envios y los valores fijos es :"+ totalbest);
+
+        System.out.println("El valor total con envios y los valores fijos es :" + totalbest);
 
     }
-	/** 
+    /** 
      * This method contains a menu that gives the user the option to look at the bill of materials according to the use. <br>
      * <b> pre: </b> previus arrays got to be filled.
      * @param materials Type Int.
-	 * @param names Type String[].
-	 * @param typeuse Type Int[].
+     * @param names Type String[].
+     * @param typeuse Type Int[].
      */
     public static void list(int materials, String[] names, int[] typeuse) {
         int i = 0;
