@@ -101,6 +101,7 @@ public class integradora1 {
     /** 
      * Calculate the total price of the materials in HomeCenter. <br>
      * <b> pre: </b> previus arrays got to be filled.
+	 * <b> pre: </b> Needs the returns of the methods true1,true2 and true3.
      * @param materials Type Int.
      * @param amount Type Double[]. 
      * @param homeCenter Type Double[].
@@ -130,6 +131,7 @@ public class integradora1 {
     /** 
      * Calculate the total price of the materials in central hardware store. <br>
      * <b> pre: </b> previus arrays got to be filled.
+	 * <b> pre: </b> Needs the returns of the methods true1,true2 and true3.
      * @param materials Type Int.
      * @param amount Type Double[]. 
      * @param hardwarestore Type Double[].
@@ -158,6 +160,7 @@ public class integradora1 {
     /** 
      * Calculate the total price of the materials in the hardware store of the neighborhood. <br>
      * <b> pre: </b> previus arrays got to be filled.
+	 * <b> pre: </b> Needs the returns of the methods true1,true2 and true3.
      * @param materials Type Int.
      * @param amount Type Double[]. 
      * @param neighborhood Type Double[].
