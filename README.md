@@ -22,6 +22,7 @@ La información del producto es:
 
 Su tío conociendo sus habilidades y competencias en programación le ha pedido el favor que le facilite una aplicación para llevar el presupuesto de la obra, si los materiales son adquiridos en: HomeCenter, Ferreteria del centro, Ferretería del barrio. Cada ferreteria puede cobrar o no, un valor por domicilio el cual depende de la ubicación del inmueble y del total de la cuenta. Suponga en este ejercicio que los valores del domicilio son los mismos para las tres ferreterías.
 
+![94388406-940f4580-0112-11eb-8b1e-1e3ef440e808](https://user-images.githubusercontent.com/69222739/94388547-008a4480-0113-11eb-80c3-c195dc6f020c.png)
     
 
 ### Autor
