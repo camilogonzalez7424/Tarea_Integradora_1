@@ -11,7 +11,7 @@ public class Integradora1 {
     public static final int ROUGHCONSTRUCTION = 1300000; //Constante para los valores fijos de la mano de obra negra. 
     public static final int FINALCONSTRUCTION = 2600000; //Constante para los valores fijos de la mano de obra blanca. 
     public static final int PAINTING = 980000; //Constate para los valores fijos de la pintura. 
-    public static void Main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("Ingrese la cantidad de materiales que contiene la lista");
         int materials = reader.nextInt(); //Variable input, utilizada para dar el tamaño de la y asimismo a los array.
         String[] names = new String[materials]; //Array utilizado para los nombres de cada material.
