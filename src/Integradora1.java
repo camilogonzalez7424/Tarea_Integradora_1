@@ -1,6 +1,6 @@
 import java.util.Scanner; //Importar Scanner
 /**
- * Clase Integradora1 <br>
+ * Class Integradora1 <br>
  * main class <br>
  * Created by Camilo González
  * @since october 2020
@@ -43,13 +43,13 @@ public class Integradora1 {
         System.out.println("El valor total de los productos en la ferreteria del centro es de " + TotalFinalC(materials, hardwarestore, amount, blackCheck, whiteCheck, paintingCheck));
         System.out.println("El valor total de los productos en la ferreteria del barrio es de " + TotalFinalB(materials, neighborhood, amount, blackCheck, whiteCheck, paintingCheck));
 
-        Delevery(names, materials, amount, valuesHomecenter, valuesHardwarestore, valuesNeighborhood, blackCheck, whiteCheck, paintingCheck);
+        Delivery(names, materials, amount, valuesHomecenter, valuesHardwarestore, valuesNeighborhood, blackCheck, whiteCheck, paintingCheck);
         List(materials, names, typeuse);
     }
 
     /** 
      * Save the price of the materials in HomeCenter. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * <b> pre: </b> previous arrays got to be filled.
      * <b> pre: </b> Scanner as attribute.
      * @param names Type String[]. 
      * @param homeCenter Type Double[].
@@ -67,7 +67,7 @@ public class Integradora1 {
     }
     /** 
      * Save the price of the materials in central hardware store. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * <b> pre: </b> previous arrays got to be filled.
      * <b> pre: </b> Scanner as attribute.
      * @param names Type String[]. 
      * @param hardwarestore Type Double[].
@@ -83,7 +83,7 @@ public class Integradora1 {
     }
     /** 
      * Save the price of the materials in the hardware store of the neighborhood. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * <b> pre: </b> previous arrays got to be filled.
      * <b> pre: </b> Scanner as attribute.
      * @param names Type String[]. 
      * @param neighborhood Type Double[].
@@ -99,7 +99,7 @@ public class Integradora1 {
     }
     /** 
      * Calculate the total price of the materials in HomeCenter. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * <b> pre: </b> previous arrays got to be filled.
 	 * <b> pre: </b> Needs the returns of the methods True1,True2 and True3.
      * @param materials Type Int.
      * @param amount Type Double[]. 
@@ -129,7 +129,7 @@ public class Integradora1 {
     }
     /** 
      * Calculate the total price of the materials in central hardware store. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * <b> pre: </b> previous arrays got to be filled.
 	 * <b> pre: </b> Needs the returns of the methods True1,True2 and True3.
      * @param materials Type Int.
      * @param amount Type Double[]. 
@@ -158,7 +158,7 @@ public class Integradora1 {
     }
     /** 
      * Calculate the total price of the materials in the hardware store of the neighborhood. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * <b> pre: </b> previous arrays got to be filled.
 	 * <b> pre: </b> Needs the returns of the methods True1,True2 and True3.
      * @param materials Type Int.
      * @param amount Type Double[]. 
@@ -186,11 +186,11 @@ public class Integradora1 {
         return totalneighborhood;
     }
     /** 
-     * Evaluate if there is a type of work. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * Evaluate if the rough type of construction exists. <br>
+     * <b> pre: </b> previous arrays got to be filled.
      * @param typeuse Type Int[].
      * @param materials Type Int. 
-     * @return evaluateN returns a true value if there is a roughconstruction.
+     * @return evaluateN returns true if there is a rough construction.
      */
     public static boolean True1(int[] typeuse, int materials) {
 
@@ -212,11 +212,11 @@ public class Integradora1 {
         return evaluateN;
     }
     /** 
-     * Evaluate if there is a type of work. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * Evaluate if the final type of construction exists. <br>
+     * <b> pre: </b> previous arrays got to be filled.
      * @param typeuse Type Int[].
      * @param materials Type Int. 
-     * @return evaluateW returns a true value if there is a finalconstruction.
+     * @return evaluateW returns true if there is a final construction.
      */
     public static boolean True2(int[] typeuse, int materials) {
 
@@ -238,11 +238,11 @@ public class Integradora1 {
         return evaluateW;
     }
     /** 
-     * Evaluate if there is a type of work. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * Evaluate if there is painting. <br>
+     * <b> pre: </b> previous arrays got to be filled.
      * @param typeuse Type Int[].
      * @param materials Type Int. 
-     * @return evaluateP returns a true value if there is a painting.
+     * @return evaluateP returns true if there is a painting.
      */
     public static boolean True3(int[] typeuse, int materials) {
 
@@ -264,8 +264,8 @@ public class Integradora1 {
         return evaluateP;
     }
     /** 
-     * This method evaluates the best prices and delevery according to the position. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * This method evaluates the best prices and delivery according to the location. <br>
+     * <b> pre: </b> previous arrays got to be filled.
      * @param names Type String[].
      * @param materials Type Int.
      * @param amount Type Double[].
@@ -276,7 +276,7 @@ public class Integradora1 {
      * @param whiteCheck Type Boolean
      * @param paintingCheck Type Boolean.
      */
-    public static void Delevery(String[] names, int materials, double[] amount, double[] valuesHomecenter, double[] valuesHardwarestore, double[] valuesNeighborhood, boolean blackCheck, boolean whiteCheck, boolean paintingCheck) {
+    public static void Delivery(String[] names, int materials, double[] amount, double[] valuesHomecenter, double[] valuesHardwarestore, double[] valuesNeighborhood, boolean blackCheck, boolean whiteCheck, boolean paintingCheck) {
         int totalbest = 0;
         for (int i = 0; i < materials; i++) {
             System.out.print("El mejor precio del material " + names[i] + " esta en: ");
@@ -363,7 +363,7 @@ public class Integradora1 {
     }
     /** 
      * This method contains a menu that gives the user the option to look at the bill of materials according to the use. <br>
-     * <b> pre: </b> previus arrays got to be filled.
+     * <b> pre: </b> previous arrays got to be filled.
      * @param materials Type Int.
      * @param names Type String[].
      * @param typeuse Type Int[].
